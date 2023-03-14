@@ -1,0 +1,32 @@
+@use "../../scss/index" as *;
+
+.wrapper {
+  width: 70vw;
+  height: 50vh;
+  margin: auto;
+  h3 {
+    color: $text-color;
+  }
+}
+.table {
+  width: 70vw;
+  margin: auto;
+  margin-top: 80px;
+}
+.chart {
+  flex: 4;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  color: gray;
+  @include fz-18;
+}
+tspan {
+  font-size: 16px;
+}
+.title {
+  margin: 15px;
+}
+.chart-grid {
+  stroke: lightgray;
+}

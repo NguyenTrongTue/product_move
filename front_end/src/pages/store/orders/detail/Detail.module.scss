@@ -1,0 +1,206 @@
+@use "../../../../scss/index" as *;
+
+.wrapper {
+  display: block;
+}
+.header {
+  @include flex(center, space-between);
+  width: 100%;
+  .nav {
+    @include flex(center, flex-start);
+    .icon {
+      margin-right: 20px;
+      @include flex(center, center);
+    }
+  }
+  .fulfill {
+    font-size: 16px;
+    background-color: $primary;
+    color: $white;
+    padding: 8px 15px;
+    border-radius: $border-radius;
+    font-weight: 600;
+  }
+}
+.status {
+  color: $white;
+  background-color: $green;
+  font-size: 16px;
+  padding: 2px 15px;
+  border-radius: $border-radius;
+  margin-left: 48px;
+}
+
+.container {
+  width: 100%;
+  @include flex(flex-start, flex-start);
+  margin-top: 30px;
+  gap: 50px;
+  @include tablet {
+    display: block;
+  }
+  @include mobile {
+    display: block;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: $text-color;
+  }
+  .wrapperContent {
+    flex: 2;
+
+    @include tablet {
+      width: 80vw;
+      overflow-x: auto;
+    }
+  }
+  .overview {
+    flex: 2;
+    background-color: $white;
+    padding: 20px;
+    border-radius: 10px;
+    @include tablet {
+      min-width: 1024px;
+    }
+    .overviewHeader {
+      @include flex(center, space-between);
+      width: 100%;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 20px;
+      .time {
+        @include fz-18;
+      }
+    }
+  }
+  .customer {
+    flex: 1;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 20px;
+    .customerHeader {
+      width: 100%;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 20px;
+    }
+    @include tablet {
+      margin-top: 2rem;
+      width: 80vw;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  padding-top: 20px;
+}
+.contentHeader {
+  @include flex(center, space-between);
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 20px;
+  span {
+    @include fz-18;
+  }
+  .contentTitle {
+    flex: 1;
+  }
+}
+.detailLabel {
+  flex: 4;
+}
+
+.detailContent {
+  @include flex(center, flex-start);
+  padding: 30px 0;
+}
+.detail {
+  @include flex(flex-start, flex-start);
+  margin-right: auto;
+  flex: 4;
+  .productImage {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $border-radius;
+    }
+  }
+  .desc {
+    margin-left: 20px;
+    .name {
+      @include fz-20;
+      font-weight: bold;
+      color: $blue;
+    }
+    .item {
+      @include flex(center, flex-start);
+      margin: 5px 0;
+      .label {
+        @include flex(center, center);
+        span {
+          @include fz-18;
+          width: 80px;
+          color: $text-color-light;
+        }
+      }
+      .value {
+        @include fz-18;
+        margin-left: 8px;
+      }
+    }
+  }
+}
+.price {
+  @include fz-18;
+  flex: 1;
+}
+.quantity {
+  @include fz-18;
+
+  flex: 1;
+}
+.total {
+  @include fz-20;
+  font-weight: bold;
+  flex: 1;
+}
+
+.customerContent {
+  padding: 40px 0px;
+  @include flex(center, center);
+  flex-direction: column;
+}
+.avatar {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 30px;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.customerItem {
+  @include flex(center, flex-start);
+}
+
+.customerLabel {
+  @include fz-20;
+  color: $text-color-light;
+  width: 120px;
+}
+.customerValue {
+  @include fz-20;
+}
+.customerName {
+  font-size: 24px;
+  font-weight: bold;
+}

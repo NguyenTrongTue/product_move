@@ -1,0 +1,102 @@
+@use "../../scss/index" as *;
+
+.datatable {
+  height: 600px;
+  margin-bottom: 50px;
+}
+
+.header {
+  @include flex(center, space-between);
+  margin-bottom: 20px;
+  .label {
+    font-size: 14px;
+    color: $white;
+    background-color: $primary;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    cursor: pointer;
+  }
+  .title {
+    font-size: 20px;
+
+    color: rgba(22, 24, 35, 0.8);
+  }
+}
+.cellWithImg {
+  @include flex(center, flex-start);
+  font-size: 15px;
+}
+.cellImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.cellWithStatus {
+  padding: 5px 8px;
+  border-radius: 5px;
+  @include fz-16;
+  &.paid {
+    background-color: $teal;
+    color: $white;
+  }
+  &.installment {
+    background-color: $warning;
+    color: $white;
+  }
+  &.false {
+    background-color: $teal;
+    color: $white;
+  }
+  &.true {
+    background-color: $danger;
+    color: $white;
+  }
+
+  &.Successful {
+    color: green;
+    background-color: rgba(0, 128, 0, 0.15);
+  }
+  &.Pending {
+    color: goldenrod;
+    background-color: rgba(189, 189, 3, 0.15);
+  }
+  &.Failure {
+    color: crimson;
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+}
+
+.cellWithPostion {
+  font-size: 15px;
+}
+.cell-action {
+  @include flex(center, flex-start);
+  gap: 15px;
+}
+.view-button {
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: $primary;
+  @include border($primary);
+  cursor: pointer;
+  &:hover {
+    color: $white;
+    background-color: $primary;
+  }
+}
+.delete-button {
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: $danger;
+  @include border($danger);
+  cursor: pointer;
+  &:hover {
+    color: $white;
+    background-color: $danger;
+  }
+}

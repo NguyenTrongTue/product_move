@@ -1,0 +1,52 @@
+.app {
+  &.dark {
+    background-color: #111;
+    color: white;
+    .chart-grid {
+      stroke: rgba(258, 258, 258, 0.2);
+    }
+    .table {
+      background-color: #111;
+    }
+    .table-cell {
+      color: gray;
+    }
+    .Navbar_wrapper__F-1i0 {
+      color: #999;
+      border-color: #333;
+    }
+    .Navbar_search__wUVOC {
+      border-color: gray;
+    }
+    .Sidebar_sidebar__QcMgW {
+      background-color: #111;
+      border-color: gray;
+      .Sidebar_top__pQKVt {
+        .Sidebar_logo__tDBXI {
+          color: #999;
+        }
+      }
+      ul {
+        li {
+          &:hover {
+            background-color: #333;
+          }
+          .icon {
+            color: #999;
+          }
+        }
+      }
+    }
+    .Datatable_datatable__MAdgY {
+      .data-grid {
+        color: gray;
+        border: none;
+        .Datatable_view-button__dB-in,
+        .Datatable_delete-button__dOsBt {
+          color: gray;
+          border: 1px solid gray;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use "../../../../scss/index" as *;
+
+.menu-item {
+  @include flex(center, flex-start);
+  padding: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(224, 224, 224);
+    @include transition(0.2s);
+  }
+  &.active {
+    background: $background-linearGradient;
+    box-shadow: 0 7px 12px 0 rgb(95 118 232 / 21%);
+    border-radius: 0 60px 60px 0;
+    .title {
+      color: white;
+    }
+    .icon {
+      svg {
+        color: $white;
+      }
+    }
+  }
+}
+.hide {
+  .menu-item {
+    justify-content: center;
+    .title {
+      display: none;
+    }
+  }
+}
+.icon {
+  font-size: 18px;
+  color: $text-color-light;
+  height: 24px;
+  width: 24px;
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 700;
+  color: $text-color-light;
+  margin-left: 8px;
+}

@@ -1,0 +1,66 @@
+@use "../../scss/index.scss" as *;
+
+.featured {
+  flex: 2;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  background-color: $white;
+}
+.top {
+  @include flex(center, space-between);
+  color: $text-color;
+  .title {
+    @include fz-20;
+    font-weight: 500;
+  }
+}
+.bottom {
+  padding: 20px;
+  @include flex(center, center);
+  flex-direction: column;
+  gap: 15px;
+
+  .featured-chart {
+    width: 150px;
+    height: 150px;
+  }
+  .title {
+    font-weight: 500;
+    color: $text-color;
+  }
+  .amount {
+    font-size: 30px;
+  }
+  .desc {
+    font-weight: 300;
+    font-size: 18px;
+    color: $text-color;
+
+    text-align: center;
+  }
+}
+
+.sumary {
+  width: 100%;
+  @include flex(center, center);
+}
+.item {
+  text-align: center;
+}
+.item-title {
+  @include fz-18;
+  color: $text-color;
+}
+.item-result {
+  display: flex;
+  align-items: center;
+  margin: 10px 60px;
+  @include fz-18;
+  &.positive {
+    color: green;
+  }
+  &.negative {
+    color: red;
+  }
+}

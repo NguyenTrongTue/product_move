@@ -1,0 +1,230 @@
+@use "../../../../scss/index" as *;
+
+.wrapper {
+  display: block;
+}
+.nav {
+  width: 100%;
+  @include flex(center, flex-start);
+  .icon {
+    margin-right: 20px;
+    @include flex(center, center);
+  }
+  span {
+    font-weight: bold;
+  }
+}
+
+.container {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.header {
+  @include flex(center, space-between);
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+  .titleHeader {
+    font-size: 24px;
+    font-weight: bold;
+    color: $text-color;
+  }
+
+  .time {
+    @include fz-18;
+  }
+}
+
+.content {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 3px;
+  column-gap: 10px;
+
+  .img {
+    width: 100%;
+    display: block;
+  }
+
+  .contentLeft {
+    padding: 20px;
+    padding-top: 0px;
+    margin-top: 10px;
+    .imgContainer {
+      @include flex(center, center);
+      flex-wrap: wrap;
+      img {
+        width: 90%;
+        padding: 1rem;
+        padding-top: 0;
+        border-radius: 3px;
+        margin: 0 4px 8px 4px;
+        @include flex(center, center);
+      }
+    }
+
+    .hoverContainer {
+      @include flex(center, center);
+      flex-wrap: wrap;
+
+      div {
+        padding: 8px;
+        border-radius: 3px;
+        margin: 0 4px 8px 4px;
+        @include flex(center, center);
+        border: 4px solid transparent;
+        &:hover {
+          border: 4px solid $yellow;
+        }
+        @include transition(0.2s);
+        img {
+          width: 80px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .contentRight {
+    padding: 10px;
+    padding-top: 0px;
+
+    .productName {
+      font-size: 32px;
+      font-weight: bold;
+      color: $text-color;
+    }
+
+    .parameterList {
+      display: block;
+      margin-bottom: 15px;
+      margin-top: 20px;
+      list-style: none;
+
+      font-size: 18px;
+      color: $text-color;
+
+      li {
+        align-items: flex-start;
+        display: flex;
+        padding: 10px;
+
+        .liLeft {
+          width: calc(100% / 3);
+        }
+
+        .liRight {
+          width: calc(100% / 3 * 2);
+        }
+      }
+
+      li:nth-child(odd) {
+        background-color: #f5f5f5;
+      }
+      li:nth-child(odd) {
+        background-color: #fff;
+      }
+    }
+
+    .btn {
+      margin-top: 15px;
+
+      button {
+        @include flex(center, center);
+        font-size: 16px;
+        font-family: inherit;
+        text-transform: uppercase;
+        padding: 15px 16px;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .btnStatus {
+        background-color: #ff9f00;
+        border: 2px solid #ff9f00;
+        margin-right: 8px;
+        width: 610px;
+        margin: auto;
+      }
+
+      .btnStatus:hover {
+        background-color: #fff;
+        color: #ff9f00;
+      }
+    }
+  }
+
+  @media (max-width: 1600px) {
+    .contentLeft {
+      .hoverContainer {
+        div {
+          img {
+            width: 75px;
+          }
+        }
+      }
+    }
+    .contentRight {
+      .productName {
+        font-size: 30px;
+      }
+      .parameterList {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .contentLeft {
+      .imgContainer {
+        img {
+          padding: 0px;
+          padding-top: 0;
+        }
+      }
+      .hoverContainer {
+        div {
+          img {
+            width: 60px;
+          }
+        }
+      }
+    }
+    .contentRight {
+      .productName {
+        font-size: 22px;
+      }
+      .parameterList {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .content {
+    grid-template-columns: 100%;
+
+    .contentRight {
+      text-align: center;
+
+      .productName {
+        font-size: 22px;
+      }
+      .parameterList {
+        font-size: 13px;
+      }
+    }
+
+    .contentLeft {
+      .hoverContainer {
+        div {
+          img {
+            width: 80px;
+          }
+        }
+      }
+    }
+  }
+}

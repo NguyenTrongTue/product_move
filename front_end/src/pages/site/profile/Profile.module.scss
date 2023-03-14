@@ -1,0 +1,95 @@
+@use "../../../scss/index.scss" as *;
+
+.container {
+  width: 100%;
+  height: 70vh;
+}
+.wrapper {
+  @include flex(center, center);
+  margin-top: 50px;
+}
+.header {
+  @include flex(center, flex-start);
+  span {
+    margin-left: 20px;
+  }
+}
+.right {
+  margin-right: 100px;
+  img {
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+  }
+}
+.edit {
+  width: 100%;
+  border: 2px solid $primary;
+  border-radius: 8px;
+  @include flex(center, flex-start);
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  span {
+    flex: 1;
+    @include fz-20;
+    font-weight: bold;
+    text-align: center;
+  }
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+}
+.left {
+  flex: 1;
+  align-self: flex-start;
+  color: $text-color;
+}
+.name {
+  @include flex(flex-start, flex-start);
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.fullname {
+  font-weight: 700;
+  color: $primary;
+}
+.username {
+  @include fz-20;
+  line-height: 1.2;
+}
+.desc {
+  @include flex(center, flex-start);
+  @include fz-20;
+}
+.join {
+  @include flex(center, center);
+  span {
+    margin-left: 20px;
+  }
+  margin-right: 50px;
+}
+.addressCode {
+  @include flex(center, center);
+  span {
+    margin-left: 20px;
+  }
+  margin-left: 50px;
+}
+.details {
+  margin-top: 50px;
+}
+.item {
+  @include flex(center, flex-start);
+  margin: 15px 0;
+}
+.key {
+  @include fz-18;
+  color: $danger;
+  width: 150px;
+  font-weight: 700;
+}
+.value {
+  @include fz-18;
+}

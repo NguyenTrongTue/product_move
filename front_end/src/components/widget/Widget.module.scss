@@ -1,0 +1,69 @@
+@use "../../scss/index.scss" as *;
+
+.widget {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 10px;
+  height: 150px;
+  background-color: $white;
+}
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  color: rgb(171, 171, 171);
+}
+.counter {
+  font-size: 28px;
+  font-weight: 300;
+}
+.link {
+  font-size: 16px;
+  width: max-content;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    color: $primary;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    transition: width 0.3s ease;
+    height: 2px;
+    background-color: $primary;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
+.percentage {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  &.positive {
+    color: green;
+  }
+  &.negative {
+    color: red;
+  }
+}
+.icon {
+  font-size: 28px;
+  padding: 5px;
+  background-color: rgba(128, 0, 128, 0.54);
+  border-radius: 5px;
+  align-self: flex-end;
+}

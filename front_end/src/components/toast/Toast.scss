@@ -1,0 +1,62 @@
+@use "../../scss/index.scss" as *;
+
+.toast {
+  padding: 15px 20px;
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  z-index: 9999;
+  @include flex(center, flex-start);
+  min-width: 300px;
+  border-radius: 4px;
+
+  &.success {
+    background-color: rgba($green, 0.8);
+    border-left: 4px solid green;
+  }
+  &.error {
+    background-color: rgba($red, 0.8);
+    border-left: 4px solid red;
+  }
+
+  .icon {
+    color: #fff;
+    @include flex(center, center);
+  }
+  .title {
+    color: #fff;
+    @include fz-20;
+    margin-left: 20px;
+  }
+}
+.toast {
+  @keyframes hide_slide {
+    0% {
+      transform: translateX(-10px);
+    }
+    40% {
+      transform: translateX(0%);
+    }
+    80% {
+      transform: translateX(-10%);
+    }
+    100% {
+      transform: translateX(120%);
+    }
+  }
+  @keyframes fade {
+    0% {
+      transform: translateX(100%);
+    }
+    40% {
+      transform: translateX(-10%);
+    }
+    80% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+  animation: fade 1s ease forwards;
+}

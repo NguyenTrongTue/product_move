@@ -1,0 +1,89 @@
+@use "../../scss/index.scss" as *;
+
+.container {
+  @include flex(center, center);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  @include overlay;
+  z-index: 9999;
+}
+.wrapper {
+  width: 500px;
+  background-color: $white;
+  padding: 20px;
+  border-radius: 8px;
+  @keyframes fade {
+    0% {
+      transform: translateY(100%);
+    }
+    40% {
+      transform: translateY(-10%);
+    }
+    80% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+
+  animation: fade 1s ease forwards;
+}
+.header {
+  @include flex(center, space-between);
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+.content {
+  margin-top: 20px;
+  width: 100%;
+  @include flex(center, center);
+  flex-direction: column;
+  gap: 20px;
+  input {
+    background-color: rgba($text-color, 0.06);
+    color: $text-color;
+    font-weight: 600;
+    font-size: 20px;
+    width: 80%;
+    padding: 10px 15px;
+    &::placeholder {
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+  .btn {
+    @include flex(center, center);
+    .btn__submit {
+      margin: 20px 80px;
+      color: white;
+      padding: 10px 15px;
+      font-size: 20px;
+      border-radius: $border-radius;
+      cursor: pointer;
+      &.disabled {
+        opacity: 0.5;
+      }
+      &.disabled:hover {
+        cursor: not-allowed;
+      }
+      &.save {
+        background-color: $primary;
+      }
+      &.close {
+        background-color: $danger;
+      }
+    }
+  }
+}

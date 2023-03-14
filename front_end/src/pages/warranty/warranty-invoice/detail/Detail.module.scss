@@ -1,0 +1,154 @@
+@use "../../../../scss/index" as *;
+
+.wrapper {
+  display: block;
+}
+.nav {
+  width: 100%;
+  @include flex(center, flex-start);
+  .icon {
+    margin-right: 20px;
+    @include flex(center, center);
+  }
+  span {
+    font-weight: bold;
+    span {
+      font-weight: 400;
+    }
+  }
+}
+
+.container {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding-bottom: 80px;
+}
+.header {
+  @include flex(center, space-between);
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 20px;
+
+  .titleHeader {
+    font-size: 24px;
+    font-weight: bold;
+    color: $text-color;
+  }
+
+  .time {
+    @include fz-18;
+  }
+}
+
+.content {
+  @include fz-18;
+  width: 100%;
+  padding-top: 20px;
+
+  .contentHeader {
+    @include flex(center, space-between);
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 20px;
+
+    .contentTitle {
+      @include flex(center, center);
+      flex: 1;
+      color: $text-color;
+      font-weight: bold;
+    }
+  }
+
+  .detailContent {
+    @include flex(center, flex-start);
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .detail {
+    @include flex(flex-start, flex-start);
+    margin-right: auto;
+    flex: 1;
+    .productImage {
+      padding: 5px;
+      max-width: 120px;
+      max-height: 120px;
+      min-width: 80px;
+      min-height: 80px;
+      margin: auto 0px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $border-radius;
+      }
+    }
+    .desc {
+      margin-left: 20px;
+      .name {
+        @include fz-20;
+        font-weight: bold;
+        color: $blue;
+      }
+      .item {
+        @include flex(center, flex-start);
+        margin: 5px 0;
+        .label {
+          @include flex(center, center);
+          span {
+            width: 80px;
+            color: $text-color-light;
+          }
+        }
+        .value {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  .contentValue {
+    @include flex(center, center);
+    flex: 1;
+  }
+}
+
+.footer {
+  position: absolute;
+  margin-top: 20px;
+  right: 10px;
+  .btn {
+    position: relative;
+    right: 40px;
+    background-color: $primary;
+    border: 2px solid $primary;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 18px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 20px;
+  }
+
+  .btn:hover {
+    background-color: #fff;
+    color: $primary;
+  }
+}
+
+@media (max-width: 1600px) {
+  .content {
+    @include fz-18;
+  }
+}
+
+@media (max-width: 1200px) {
+  .content {
+    @include fz-16;
+  }
+}

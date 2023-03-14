@@ -1,0 +1,150 @@
+@use "../../scss/index" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Questrial&display=swap");
+
+:root {
+  --font-family-default: Helvetica, Arial, sans-serif;
+  --font-family-segoe: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family-segoe);
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+  font-family: var(--font-family-segoe);
+  &::placeholder {
+    font-family: var(--font-family-segoe);
+  }
+}
+
+a[href] {
+  text-decoration: none;
+  color: #161823;
+}
+
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+  height: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+.mt-8 {
+  margin-top: 8rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.MuiDataGrid-columnHeaderTitle {
+  font-size: 15px;
+}
+.MuiDataGrid-columnHeaders {
+  background-color: $primary;
+  color: $white;
+}
+
+.MuiDataGrid-cellContent {
+  font-size: 15px;
+}
+
+.data-grid {
+  background-color: $white;
+}
+
+.recharts-default-tooltip {
+  p {
+    font-size: 18px;
+  }
+  span {
+    font-size: 18px;
+  }
+}
+.recharts-responsive-container {
+  background-color: $white;
+}
+.sidebar {
+  min-height: 100vh;
+  background-color: $white;
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: all ease 0.3s;
+  z-index: 9999;
+}
+
+.hide {
+  width: 70px;
+  .top {
+    width: 70px;
+    .brand {
+      display: none;
+    }
+  }
+  .center {
+    padding-left: 0px;
+  }
+  .title {
+    text-align: center;
+  }
+  .bottom {
+    display: block;
+    justify-content: center;
+    margin: unset;
+    .color-options {
+      margin: 10px auto;
+    }
+  }
+}
+.navbar {
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: $header-height;
+  border-bottom: 1px solid $border-color;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - $sidebar-width-large);
+  background-color: $body-bg;
+  z-index: 10;
+  &.shrink {
+    height: $header-height;
+    background-color: $header-bg;
+  }
+  transition: all 0.3s ease;
+}

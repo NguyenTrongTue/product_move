@@ -1,0 +1,28 @@
+@use "../../scss/index" as *;
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  overflow-y: hidden;
+}
+.container {
+  flex-shrink: 1;
+  background-color: $body-bg;
+  margin-top: 80px;
+  margin-left: $sidebar-width-large;
+  width: 100%;
+  transition: all ease 0.3s;
+  @include tablet {
+    margin-left: $sidebar-width-small;
+  }
+}
+.content {
+  padding: 50px,
+}
+.hide + .container {
+  margin-left: $sidebar-width-small;
+
+  .navbar {
+    width: calc(100% - $sidebar-width-small);
+  }
+}

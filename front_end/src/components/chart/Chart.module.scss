@@ -1,0 +1,42 @@
+@use "../../scss/index.scss" as *;
+
+.chart {
+  flex: 4;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  color: gray;
+}
+.chart-grid {
+  stroke: lightgray;
+}
+
+.header {
+  @include flex(center, space-between);
+  .title {
+    margin: 15px;
+  }
+  .field {
+    @include flex(center, center);
+
+  }
+  .label {
+ 
+    @include fz-18;
+    width: 200px;
+  }
+  select {
+    @include fz-16;
+    border: 1px solid #aaa;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    @include fz-18;
+    font-weight: 600;
+  }
+
+  select {
+    color: #707070;
+  }
+}
